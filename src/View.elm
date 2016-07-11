@@ -2,7 +2,6 @@ module View exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Html.Events exposing (..)
 import Types exposing (..)
 
 
@@ -13,6 +12,7 @@ root model =
             [ text "News!" ]
         , ul []
             (List.map newsItem model.news)
+        , div [] [ code [] [ text (toString model) ] ]
         ]
 
 

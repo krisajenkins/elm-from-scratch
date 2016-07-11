@@ -14,7 +14,7 @@ decodeNewsItem =
 
 decodeNews : Decoder (List News)
 decodeNews =
-    list decodeNewsItem
+    "hits" := (list decodeNewsItem)
 
 
 endpoint : String

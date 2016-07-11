@@ -21,6 +21,11 @@ update msg model =
             , Cmd.none
             )
 
+        GetNewsResponse (Ok news) ->
+            ( { model | news = news }
+            , Cmd.none
+            )
+
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
