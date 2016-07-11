@@ -7,11 +7,16 @@ type alias News =
     { headline : String }
 
 
+type FetchedData a
+    = Loading
+    | Failed Http.Error
+    | Succeed a
+
+
 type alias Model =
-    { news : List News
-    , error : Maybe Http.Error
+    { news : FetchedData (List News)
     }
 
 
 type Msg
-    = GetNewsResponse (Result Http.Error (List News))
+    = GetNewsResponse (FetchedData (List News))

@@ -6,8 +6,7 @@ import Types exposing (..)
 
 init : ( Model, Cmd Msg )
 init =
-    ( { news = []
-      , error = Nothing
+    ( { news = Loading
       }
     , getNews
     )
@@ -16,13 +15,8 @@ init =
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        GetNewsResponse (Err errorMessage) ->
-            ( { model | error = Just errorMessage }
-            , Cmd.none
-            )
-
-        GetNewsResponse (Ok news) ->
-            ( { model | news = news }
+        GetNewsResponse response ->
+            ( { model | news = response }
             , Cmd.none
             )
 
