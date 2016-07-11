@@ -1,12 +1,13 @@
 module State exposing (..)
 
+import Rest exposing (..)
 import Types exposing (..)
 
 
 init : ( Model, Cmd Msg )
 init =
     ( { news = [] }
-    , Cmd.none
+    , getNews
     )
 
 
