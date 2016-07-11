@@ -5,7 +5,7 @@ import Types exposing (..)
 
 init : ( Model, Cmd Msg )
 init =
-    ( {}
+    ( { news = [] }
     , Cmd.none
     )
 
